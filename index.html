@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | CS Student</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        header {
+            background: linear-gradient(to right, #003366, #004080);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #42a5f5;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section h2 {
+            color: #42a5f5;
+            border-bottom: 2px solid #004080;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            animation: slideIn 1.5s ease;
+        }
+
+        #projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .project {
+            background-color: #003366;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            flex: 0 1 calc(30% - 20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+            animation: zoomIn 1.5s ease;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+            background-color: #004080;
+        }
+
+        .project.clicked {
+            background-color: #42a5f5;
+        }
+
+        .project img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .skills-list span {
+            background: #004080;
+            color: #ffffff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .skills-list span:hover {
+            background: #42a5f5;
+        }
+
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        #contact input,
+        #contact textarea,
+        #contact button {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #contact button {
+            background: #003366;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #contact button:hover {
+            background: #42a5f5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #004080;
+            color: #ffffff;
+            border-top: 1px solid #003366;
+        }
+
+        footer a {
+            color: #42a5f5;
+            text-decoration: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ssentongo Zakiyu's Portfolio</h1>
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+            <a href="MY__CV.pdf" onclick="downloadCV()">Download CV</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Hi, I’m <span style="color: #42a5f5; font-weight: bold;">Ssentongo Zakiyu</span>, a Computer Science student passionate about cybersecurity, web development, and AI. Welcome to my portfolio!
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project" onclick="highlightProject(this)">
+            <img src="pro1.png" alt="Project 1">
+            <h3>Project 1</h3>
+            <p>A dynamic personal portfolio website.</p>
+        </div>
+        <div class="project" onclick="highlightProject(this)">
+            <img src="pro.png" alt="Project 2">
+            <h3>Project 2</h3>
+            <p>Blogging Website </p>
+        </div>
+        <div class="project" onclick="highlightProject(this)">
+            <img src="pro3.png" alt="Project 3">
+            <h3>Project 3</h3>
+            <p>Interactive to-do list app.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <span>HTML/CSS/Javascript</span>
+            <span>Google Blogger CMS </span>
+            <span>Wordpress CMS </span>
+            <span>Python</span>
+            <span>C++/C</span>
+            <span>Data Analytics </span>
+            <span>Windows/Linux Os </span>
+
+                        <span>Python</span>
+
+            <span>Cybersecurity</span>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 Ssentongo Zakiyu. All rights reserved. Built with <span style="color: #42a5f5;">passion</span>.</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle CV download
+        function downloadCV() {
+            alert("The CV download feature is not yet implemented.");
+        }
+
+        // Handle form submission
+        document.querySelector("form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("Thank you! Your message has been sent.");
+        });
+
+        // Highlight project when clicked
+        function highlightProject(element) {
+            element.classList.toggle("clicked");
+        }
+    </script>
+</body>
+</html>
